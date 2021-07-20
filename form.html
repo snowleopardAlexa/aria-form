@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aria form - username and password</title>
+    <title>Aria forms</title>
     <!--font awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="form.css">
@@ -53,16 +53,16 @@
                 <label for="username">Username</label>
                 <input type="text" id="username" required />
                 <i class="fas fa-info-circle tooltip"></i>
-                <div role="tooltip" id="username-tip" class="helperText"></div>* Your username is your email address.
+                <div role="tooltip" id="username-tip" class="tooltipText">Your username is your email address.
                 <i class="fas fa-times-circle closeBtn"></i>
+                </div>
             </div>
 
             <div class="login-form">
                 <label for="password">Password</label>
                 <input type="text" id="password" required />            
                 <i class="fas fa-info-circle tooltip"></i>
-
-                <div role="tooltip" id="password-tip" class="helperText">* Your password was emailed to you when you signed up. Need us to<a href="#"> resend </a>it?
+                <div role="tooltip" id="password-tip" class="tooltipText">Your password was emailed to you when you signed up. Do you want us to <a href="#"> Resend </a>it?
                 <i class="fas fa-times-circle closeBtn"></i>
                 </div>
             </div>
@@ -73,19 +73,42 @@
                 onKeyPress="changeCheckbox()" tabindex="0" aria-labelledby="checkLabel"></span>
                 <label id="checkLabel" onClick="changeCheckbox()" onKeyPress="changeCheckbox()">Remember me</label>
             </div>
-
-            <!--custom slider-->
-            <label>
-                <input type="checkbox">
-                <span class="checkbox-value" aria-hidden="true"></span>
-                Set 
-            </label>
             <input type="submit" id="signIn" value="Sign In">
         </fieldset>
     </form>
 </section>
 
-   
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function() {
+   // tooltip-tip
+   var btn = $(".fas.tooltip");
+    $(btn).click(function () {
+        $(this).siblings(".tooltipText").toggle();
+    });
+
+    $(".closeBtn").click(function() {
+        $(this).parent("div").toggle();
+    })
+
+    // close tooltip-tip on input focus
+    $("input").click(function() {
+        $(".login-form div").hide();
+      })
+    });
+
+    // custom checkbox
+    function changeCheckbox(event) {
+        let item = document.getElementById('checkPreference');
+        switch(item.getAttribute('aria-checked')) {
+            case "true":
+            item.setAttribute('aria-checked', "false");
+            break;
+            case "false":
+            item.setAttribute('aria-checked', "true");
+            break;
+        }
+    }
+</script>
 </body>
 </html>
