@@ -13,8 +13,8 @@
 <!--aria forms-->
 <section id="aria-forms">
     <!--contact from-->
-    <div role="form" class="form" aria-labelledby="addContact" id="contact">
-        <fieldset>
+    <div role="form" aria-labelledby="addContact" id="contact">
+        <fieldset class="form">
             <legend id="addContact">Contact</legend>
 
             <label for="name">Name</label>
@@ -31,7 +31,7 @@
     </div>
     <!--company form-->
     <div role="form" aria-labelledby="addOrganization" id="organization">
-        <fieldset>
+        <fieldset class="form">
             <legend id="addOrganization">Organization</legend>
 
             <label for="orgName">Organization Name</label>
@@ -40,14 +40,14 @@
             <label for="url">Web address</label>
             <input type="url" name="url" id="url">
             
-            <input type="submit" id="submitOrg" value="Add Organization">
+            <input type="submit" id="submitOrg" value=" Add Organization">
         </fieldset>
     </div>
 
     <!--login form-->
     <form action="#" method="post">
-        <fieldset>
-            <legend>Login form</legend>
+        <fieldset class="form">
+            <legend>Login</legend>
    
             <div class="login-form">
                 <label for="username">Username</label>
@@ -70,7 +70,7 @@
             <!--custom checkbox-->
             <div class="check">
                 <span role="checkbox" id="checkPreference" aria-checked="false" onClick="changeCheckbox()"
-                onKeyPress="changeCheckbox()" tabindex="0" aria aria-labelledby="checkLabLael"></span>
+                onKeyPress="changeCheckbox()" tabindex="0" aria-labelledby="checkLabel"></span>
                 <label id="checkLabel" onClick="changeCheckbox()" onKeyPress="changeCheckbox()">Remember me</label>
             </div>
 

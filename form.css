@@ -5,9 +5,8 @@ font-family: 'Open Sans Condensed', sans-serif;
 font-family: 'Oswald', sans-serif;
 */
 /* FORM */
-
 body {
-    background: rgb(136, 253, 136);
+    background: #b5179e;
 }
 
 * {
@@ -16,21 +15,20 @@ body {
     font-family: 'Open Sans Condensed', sans-serif;
 }
 
+#aria-forms {
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+/* align center forms */
 .form {
     margin: 0 auto;
-    display: block;
-    margin-left: 0 auto;
-    margin-right: 0 auto;
 }
 
 fieldset {
     padding: 1em 2em;
     border: none;
-    border-radius: 6px;
-    background-color: rgb(185, 27, 185);
-    margin: auto;
-    margin-bottom: 2em;
-    margin: 1em 2em;
+    background-color: #f72585;
 }
 
 legend {
@@ -43,7 +41,8 @@ legend {
     top: 1em;
 }
 
-label{
+label {
+    /* align label horizontally */
     display: block;
     margin-top: 1em;
     margin-bottom: 10px;
@@ -51,43 +50,55 @@ label{
     color: #fff;
 }
 
-.checks label {
-        margin-top: 0;
-    }
-
+/* add margin top to the first label only */
 label:first-of-type {
     margin-top: 2em;
 }
-input {
-    padding: .5em;
-    border: solid 1px #999;
-    border-radius: 4px;
-}
-input[type="email"], input[type="url"], input[type="text"] {
-    width: 15em;
-}
+
+
+
 
 .check {
     margin-top: .5em;
     font-size: .9em;
 }
 
- #chkLabel {
+ #checkLabel {
     display: inline-block;
     margin-top: 0;
     align-items: center;
 }
 
+/* buttons */
 input[type="submit"] {
     display: block;
-    padding: .5em 1em;
-    margin-top: 2em;
-    border-radius: 6px;
-    background-color: rgb(236, 187, 6);
+    padding:0.35em 1.2em;
+    border-radius: 0;
+    margin-top: 25px;
+    background-color: #7209b7;
     color: #fff;
-    font-family: 'Lato', sans-serif;
-    font-size: 1em;
-    border: solid 1px #fff;
+    font-size: 1.2em;
+    border: none;
+    transition: all 0.2s;
+}
+
+input[type="submit"]:hover {
+    color: #fff;
+    background-color: #480ca8;
+}
+
+/* inputs */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"] {
+    background-color: #4cc9f0;
+    border: none;
+    border-radius: 0;
+    color: #fff;
+    font-size: 1.1rem;
+    width: 15em;
+    padding: 10px;
 }
 
 /* help-tip */
@@ -101,6 +112,7 @@ i.fas {
     display: inline-block;
     color: rgb(236, 187, 7);
 }
+
 .helper {display: none;}
    
 .helperText {
@@ -213,7 +225,6 @@ input:checked + .checkbox-value::before {
 [aria-checked="false"]::before {
     content: "\f14a";
 }
-
 
 
  @media screen and (min-width: 430px) {
